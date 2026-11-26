@@ -1,0 +1,46 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 0 159 227;      /* #009FE3 */
+  --primary-600: 0 124 183;  /* darker for AA text/hover */
+  --primary-100: 204 236 249;
+  --primary-50: 235 248 253;
+  --charcoal: 55 55 54;      /* #373736 */
+  /* neutrals = charcoal tints over white (70 / 50 / 20 / 12 / 5 %) */
+  --charcoal-600: 115 115 114;
+  --charcoal-400: 155 155 154;
+  --charcoal-200: 215 215 214;
+  --charcoal-100: 231 231 231;
+  --charcoal-50: 243 243 243;
+  --dark: 0 58 80;           /* #003A50 – accent only */
+  --surface: 244 248 250;    /* #F4F8FA app background */
+  --line: 223 231 235;       /* #DFE7EB hairlines */
+  --muted: 107 122 130;      /* #6B7A82 secondary text */
+  --sky: 185 215 228;        /* #B9D7E4 chart tint */
+  --teal: 10 110 152;        /* #0A6E98 */
+  --dark-600: 11 79 105;     /* #0B4F69 sidebar glow */
+  --dark-500: 0 74 102;      /* #004A66 */
+  --dark-400: 0 88 122;      /* #00587A */
+  --gold: 183 131 47;        /* #B7832F */
+  --rose: 181 72 74;         /* #B5484A */
+  --ink: 13 19 25;           /* near-black hero backdrop (login only) */
+  --dir: 1;
+  --success: 30 120 80;  --success-50: 231 244 237;
+  --warning: 150 95 10;  --warning-50: 253 243 224;
+  --danger: 176 48 48;   --danger-50: 252 234 234;
+}
+[dir='rtl'] { --dir: -1; }
+@layer base {
+  html { font-family: Inter, system-ui, sans-serif; }
+  body { @apply bg-white text-charcoal antialiased; }
+  :focus-visible { @apply outline-none ring-2 ring-primary ring-offset-2; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
